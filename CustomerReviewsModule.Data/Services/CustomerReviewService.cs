@@ -47,15 +47,13 @@ namespace CustomerReviewsModule.Data.Services
                     {
                         var sourceEntity = AbstractTypeFactory<CustomerReviewEntity>.TryCreateInstance().FromModel(derivativeContract, pkMap);
                         var targetEntity = alreadyExistEntities.FirstOrDefault(x => x.Id == sourceEntity.Id);
-                        if (targetEntity != null)
-                        {
-                            changeTracker.Attach(targetEntity);
-                            sourceEntity.Patch(targetEntity);
-                        }
-                        else
+                        if (targetEntity == null)
                         {
                             repository.Add(sourceEntity);
+                            continue;
                         }
+                        changeTracker.Attach(targetEntity);
+                        sourceEntity.Patch(targetEntity);
                     }
 
                     CommitChanges(repository);

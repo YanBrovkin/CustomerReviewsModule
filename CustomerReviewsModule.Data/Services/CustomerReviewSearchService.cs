@@ -34,25 +34,18 @@ namespace CustomerReviewsModule.Data.Services
                 var query = repository.CustomerReviews;
 
                 if (!criteria.ProductIds.IsNullOrEmpty())
-                {
                     query = query.Where(x => criteria.ProductIds.Contains(x.ProductId));
-                }
 
                 if (criteria.IsActive.HasValue)
-                {
                     query = query.Where(x => x.IsActive == criteria.IsActive);
-                }
 
                 if (!criteria.SearchPhrase.IsNullOrEmpty())
-                {
                     query = query.Where(x => x.Content.Contains(criteria.SearchPhrase));
-                }
 
                 var sortInfos = criteria.SortInfos;
                 if (sortInfos.IsNullOrEmpty())
-                {
                     sortInfos = new[] { new SortInfo { SortColumn = "CreatedDate", SortDirection = SortDirection.Descending } };
-                }
+
                 query = query.OrderBySortInfos(sortInfos);
 
                 retVal.TotalCount = query.Count();

@@ -29,9 +29,7 @@ namespace CustomerReviewsModule.Data.Repositories
         {
             var items = GetByIds(ids);
             foreach (var item in items)
-            {
                 Remove(item);
-            }
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
