@@ -7,6 +7,12 @@
           "modifiedDate": "Last updated",
           "no-review": "No Customer Reviews found"
         }
+      },
+      "review-detail": {
+        "labels": {
+          "content": "Content",
+          "productId": "Product Identifier"
+        }
       }
     },
     "widgets": {
