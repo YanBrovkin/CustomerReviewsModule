@@ -15,9 +15,9 @@ angular.module(moduleName, [])
                     controller: [
                         '$scope', 'platformWebApp.bladeNavigationService', function ($scope, bladeNavigationService) {
                             var newBlade = {
-                                id: 'blade1',
-                                controller: 'customerReviewsModule.helloWorldController',
-                                template: 'Modules/$(customerReviewsModule.Web)/Scripts/blades/hello-world.html',
+                                id: 'reviewsList',
+                                controller: 'customerReviewsModule.reviewsListController',
+                                template: 'Modules/$(CustomerReviewsModule.Web)/Scripts/blades/reviews-list.tpl.html',
                                 isClosingDisabled: true
                             };
                             bladeNavigationService.showBlade(newBlade);
@@ -38,5 +38,13 @@ angular.module(moduleName, [])
                 permission: 'customerReviewsModule.WebPermission'
             };
             mainMenuService.addMenuItem(menuItem);
+			
+			//Register reviews widget inside product blade
+			var itemReviewsWidget = {
+                controller: 'customerReviewsModule.customerReviewWidgetController',
+                isVisible: function (blade) { return !blade.isNew && blade.controller === 'virtoCommerce.catalogModule.itemDetailController'; },
+                template: 'Modules/$(CustomerReviewsModule.Web)/Scripts/widgets/customerReviewWidget.tpl.html'
+			};
+			widgetService.registerWidget(itemReviewsWidget, 'itemDetail');
         }
     ]);

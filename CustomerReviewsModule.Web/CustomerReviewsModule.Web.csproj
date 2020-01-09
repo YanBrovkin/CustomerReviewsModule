@@ -120,6 +120,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Scripts\blades\review-detail.tpl.html" />
+    <Content Include="Scripts\blades\review-detail.js" />
+    <Content Include="Scripts\widgets\customerReviewWidget.js" />
+    <Content Include="Scripts\widgets\customerReviewWidget.tpl.html" />
     <None Include="module.ignore" />
     <None Include="packages.config" />
     <None Include="Content\help\index.html" />
@@ -139,8 +143,8 @@
   <ItemGroup>
     <Content Include="module.manifest" />
     <Content Include="Content\css\customer-reviews-module.css" />
-    <Content Include="Scripts\blades\hello-world.js" />
-    <Content Include="Scripts\blades\hello-world.html" />
+    <Content Include="Scripts\blades\reviews-list.js" />
+    <Content Include="Scripts\blades\reviews-list.tpl.html" />
     <Content Include="Scripts\module.js" />
     <Content Include="Scripts\resources\customer-reviews-module-api.js" />
   </ItemGroup>
@@ -159,6 +163,7 @@
       <Name>CustomerReviewsModule.Data</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

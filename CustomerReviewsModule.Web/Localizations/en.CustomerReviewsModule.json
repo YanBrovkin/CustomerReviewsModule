@@ -1,8 +1,17 @@
 {
   "customerReviewsModule": {
     "blades": {
-      "hello-world": {
-        "title": "Hello world blade"
+      "review-list": {
+        "labels": {
+          "content": "Content",
+          "modifiedDate": "Last updated",
+          "no-review": "No Customer Reviews found"
+        }
+      }
+    },
+    "widgets": {
+      "item-detail": {
+        "title": "Customer reviews"
       }
     }
   }
