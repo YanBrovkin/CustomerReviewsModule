@@ -49,7 +49,7 @@ namespace CustomerReviewsModule.Web
             //Registering settings to store module allows to use individual values in each store
             var settingManager = _container.Resolve<ISettingsManager>();
             var storeSettingsNames = new[] { "CustomerReviews.CustomerReviewsEnabled" };
-            var storeSettings = settingManager.GetModuleSettings("CustomerReviews.Web").Where(x => storeSettingsNames.Contains(x.Name)).ToArray();
+            var storeSettings = settingManager.GetModuleSettings("CustomerReviewsModule.Web").Where(x => storeSettingsNames.Contains(x.Name)).ToArray();
             settingManager.RegisterModuleSettings("VirtoCommerce.Store", storeSettings);
         }
     }
