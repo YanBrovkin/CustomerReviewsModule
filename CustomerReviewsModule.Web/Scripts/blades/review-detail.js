@@ -21,5 +21,5 @@
 
             blade.headIcon = 'fa-archive';
 
-            initializeBlade(angular.copy(blade.currentEntity));
+            initializeBlade(blade.currentEntity);
         }]);
