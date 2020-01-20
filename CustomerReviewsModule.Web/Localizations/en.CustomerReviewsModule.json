@@ -1,0 +1,24 @@
+{
+  "customerReviewsModule": {
+    "blades": {
+      "review-list": {
+        "labels": {
+          "content": "Content",
+          "modifiedDate": "Last updated",
+          "no-review": "No Customer Reviews found"
+        }
+      },
+      "review-detail": {
+        "labels": {
+          "content": "Content",
+          "productId": "Product Identifier"
+        }
+      }
+    },
+    "widgets": {
+      "item-detail": {
+        "title": "Customer reviews"
+      }
+    }
+  }
+}
