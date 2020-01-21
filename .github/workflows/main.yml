@@ -1,0 +1,17 @@
+name: CI
+
+on: [pull_request]
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@master
+    - name: Setup MSBuild.exe
+      uses: warrenbuckley/Setup-MSBuild@v1
+
+    - name: Build & test project
+      working-directory: src
+      run: MSBuild msbuild.xml /t:Build /p:Configuration=Release
