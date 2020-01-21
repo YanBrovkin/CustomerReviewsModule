@@ -13,5 +13,5 @@ jobs:
       uses: warrenbuckley/Setup-MSBuild@v1
 
     - name: Build & test project
-      working-directory: src
-      run: MSBuild "..\..\msbuild.xml" /t:Build /p:Configuration=Release
+      working-directory: CustomerReviewsModule.Tests
+      run: MSBuild msbuild.xml /t:Build /p:Configuration=Release
