@@ -11,6 +11,9 @@ jobs:
     - uses: actions/checkout@master
     - name: Setup MSBuild.exe
       uses: warrenbuckley/Setup-MSBuild@v1
+      
+    - name: Restore packages
+      run: nuget restore
 
     - name: Build & test project
       run: MSBuild msbuild.xml /t:Build /p:Configuration=Release
