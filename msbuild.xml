@@ -22,7 +22,7 @@
 
     <Target Name="Test">
       <Message Text="=== Running unit tests : $(Configuration) configuration ===" />
-        <xunit Assemblies="@(TestAssemblies)" Reporter="verbose" />
+        <xunit Assemblies="@(TestAssemblies)" />
     </Target>
 
 </Project>

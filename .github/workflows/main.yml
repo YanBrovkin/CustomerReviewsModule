@@ -9,9 +9,20 @@ jobs:
 
     steps:
     - uses: actions/checkout@master
+    - name: Setup Nuget.exe
+      uses: warrenbuckley/Setup-Nuget@v1
+
+    - name: Restore packages
+      run: nuget restore
+      
     - name: Setup MSBuild.exe
       uses: warrenbuckley/Setup-MSBuild@v1
 
     - name: Build & test project
-      working-directory: src
-      run: MSBuild "..\..\msbuild.xml" /t:Build /p:Configuration=Release
+      run: MSBuild msbuild.xml /t:Build /p:Configuration=Release
+    
+    - name: Setup dotnet
+      uses: actions/setup-dotnet@v1
+    
+    - name: Start tests
+      run: dotnet test
