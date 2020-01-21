@@ -1,26 +1,31 @@
-﻿<div class="blade-content __medium-wide">
+﻿<div></div>
+<div class="blade-content __medium-wide">
     <div class="blade-inner">
         <div class="inner-block">
             <form class="form" name="detailForm">
                 <div class="form-group clearfix">
                     <div class="column">
                         <div class="form-group">
-                            <label class="form-label">{{ 'customerReviewsModule.blades.review-detail.labels.productId' | translate }}</label>
+                            <label class="form-label">{{ 'customerReviewsModule.blades.review-detail.labels.authorNickname' | translate }}</label>
                             <div class="form-input">
-                                <p class="form-text">{{blade.currentEntity.productId}}</p>
+                                <p class="form-text">{{blade.currentEntity.authorNickname}}</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="column">
                         <div class="form-group">
                             <label class="form-label">{{ 'customerReviewsModule.blades.review-detail.labels.content' | translate }}</label>
                             <div class="form-input">
                                 <p class="form-text">{{blade.currentEntity.content}}</p>
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label class="form-label">{{ 'customerReviewsModule.blades.review-detail.labels.rating' | translate }}</label>
+                            <div class="form-input">
+                                <span class="star-icon" ng-repeat="r in getRepeater() track by $index" ng-class="{'full': ($index + 1) <= blade.currentEntity.rating}">☆</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <va-metaform blade="blade" registered-inputs="blade.metaFields" column-count="2"></va-metaform>
+                <va-metaform blade="blade" registered-inputs="blade.metaFields" column-count="1"></va-metaform>
             </form>
         </div>
     </div>

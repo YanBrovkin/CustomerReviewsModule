@@ -3,15 +3,18 @@
     "blades": {
       "review-list": {
         "labels": {
-          "content": "Content",
+          "authorNickname": "Author",
+          "content": "Description",
           "modifiedDate": "Last updated",
           "no-review": "No Customer Reviews found"
         }
       },
       "review-detail": {
         "labels": {
-          "content": "Content",
-          "productId": "Product Identifier"
+          "title": "Customer review details",
+          "content": "Description",
+          "authorNickname": "Author",
+          "rating": "Rating"
         }
       }
     },
