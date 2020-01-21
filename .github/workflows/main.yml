@@ -14,4 +14,4 @@ jobs:
 
     - name: Build & test project
       working-directory: src
-      run: MSBuild msbuild.xml /t:Build /p:Configuration=Release
+      run: MSBuild "..\..\msbuild.xml" /t:Build /p:Configuration=Release
