@@ -20,3 +20,9 @@ jobs:
 
     - name: Build & test project
       run: MSBuild msbuild.xml /t:Build /p:Configuration=Release
+    
+    - name: Setup dotnet
+      uses: actions/setup-dotnet@v1
+    
+    - name: Start tests
+      run: dotnet test
