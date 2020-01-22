@@ -6,7 +6,7 @@ namespace CustomerReviewsModule.Data.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
             MigrationsDirectory = @"Migrations";
         }
 
