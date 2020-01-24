@@ -77,9 +77,9 @@
     <Compile Include="Migrations\201912291719353_Initial.Designer.cs">
       <DependentUpon>201912291719353_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202001201546480_AddProductRating.cs" />
-    <Compile Include="Migrations\202001201546480_AddProductRating.Designer.cs">
-      <DependentUpon>202001201546480_AddProductRating.cs</DependentUpon>
+    <Compile Include="Migrations\202001221638310_202001201546480_AddProductRating.cs" />
+    <Compile Include="Migrations\202001221638310_202001201546480_AddProductRating.Designer.cs">
+      <DependentUpon>202001221638310_202001201546480_AddProductRating.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CustomerReviewEntity.cs" />
@@ -93,8 +93,8 @@
     <EmbeddedResource Include="Migrations\201912291719353_Initial.resx">
       <DependentUpon>201912291719353_Initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001201546480_AddProductRating.resx">
-      <DependentUpon>202001201546480_AddProductRating.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202001221638310_202001201546480_AddProductRating.resx">
+      <DependentUpon>202001221638310_202001201546480_AddProductRating.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

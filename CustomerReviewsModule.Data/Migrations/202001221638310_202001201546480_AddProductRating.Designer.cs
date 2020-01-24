@@ -7,13 +7,13 @@ namespace CustomerReviewsModule.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class AddProductRating : IMigrationMetadata
+    public sealed partial class _202001201546480_AddProductRating : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddProductRating));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(_202001201546480_AddProductRating));
         
         string IMigrationMetadata.Id
         {
-            get { return "202001201546480_AddProductRating"; }
+            get { return "202001221638310_202001201546480_AddProductRating"; }
         }
         
         string IMigrationMetadata.Source
