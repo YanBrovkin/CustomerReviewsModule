@@ -72,5 +72,15 @@ namespace CustomerReviewsModule.Data.Services
                 CommitChanges(repository);
             }
         }
+
+        public int GetAverageRating(string productId)
+        {
+            if (productId.IsNullOrEmpty())
+                throw new ArgumentNullException(nameof(productId));
+            using (var repository = _repositoryFactory())
+            {
+                return Convert.ToInt32(repository.CustomerReviews.Select(r => r.Rating).AsEnumerable().Average());
+            }
+        }
     }
 }
