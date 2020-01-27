@@ -3,6 +3,7 @@
     "blades": {
       "review-list": {
         "labels": {
+          "title": "Customer reviews",
           "authorNickname": "Author",
           "content": "Description",
           "modifiedDate": "Last updated",

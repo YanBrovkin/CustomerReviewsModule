@@ -53,6 +53,7 @@ angular.module('customerReviewsModule')
             //}
 
             blade.headIcon = 'fa-comments';
+            blade.title = 'customerReviewsModule.blades.review-list.labels.title';
 
             blade.toolbarCommands = [
                 {
