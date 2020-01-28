@@ -65,5 +65,18 @@ namespace CustomerReviewsModule.Web.Controllers.Api
             _customerReviewService.DeleteCustomerReviews(ids);
             return StatusCode(HttpStatusCode.NoContent);
         }
+
+        /// <summary>
+        /// Return average rating by product identitier
+        /// </summary>
+        [HttpGet]
+        [Route("products/{productId}/averageRating")]
+        [ResponseType(typeof(int))]
+        [CheckPermission(Permission = Core.ModuleConstants.Security.Permissions.Read)]
+        public IHttpActionResult GetAverageRating(string productId)
+        {
+            var averageRating = _customerReviewService.GetAverageRating(productId);
+            return Ok(averageRating);
+        }
     }
 }

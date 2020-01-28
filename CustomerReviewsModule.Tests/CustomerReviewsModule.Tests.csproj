@@ -119,6 +119,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Mappers\CustomerReviewEntityTests.cs" />
     <Compile Include="Services\CustomerReviewSearchServiceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\CustomerReviewServiceTests.cs" />

@@ -9,7 +9,7 @@
             function initializeBlade(data) {
 
                 blade.currentEntityId = data.id;
-                blade.title = data.name;
+                blade.title = 'customerReviewsModule.blades.review-detail.labels.title';
 
                 blade.currentEntity = angular.copy(data);
                 blade.origEntity = data;
@@ -17,7 +17,10 @@
             }
 
             $scope.setForm = function (form) { $scope.formScope = form; };
-
+            var maxRate = 5;
+            $scope.getRepeater = function () {
+                return new Array(maxRate);
+            };
 
             blade.headIcon = 'fa-archive';
 

@@ -7,5 +7,6 @@ namespace CustomerReviewsModule.Core.Services
         CustomerReview[] GetByIds(string[] ids);
         void SaveCustomerReviews(CustomerReview[] items);
         void DeleteCustomerReviews(string[] ids);
+        int GetAverageRating(string productId);
     }
 }
