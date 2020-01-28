@@ -79,7 +79,7 @@ namespace CustomerReviewsModule.Data.Services
                 throw new ArgumentNullException(nameof(productId));
             using (var repository = _repositoryFactory())
             {
-                return Convert.ToInt32(repository.CustomerReviews.Select(r => r.Rating).AsEnumerable().Average());
+                return Convert.ToInt32(repository.CustomerReviews.Where(r => r.ProductId == productId).Average(r => (int?)r.Rating) ?? default);
             }
         }
     }

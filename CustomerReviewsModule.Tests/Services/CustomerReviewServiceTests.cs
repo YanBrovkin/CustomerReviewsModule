@@ -141,5 +141,54 @@ namespace CustomerReviewsModule.Tests.Services
                     && r.Contains(customerReviewEntities[0].Id))),
                 Times.Once);
         }
+
+        [Fact]
+        public void GetAverageRating_ShouldThrowException_IfProductIdIsNull()
+        {
+            //arrange
+            string productId = null;
+
+            //act
+            Action act = () => service.GetAverageRating(productId);
+
+            //assert
+            act.Should().Throw<ArgumentNullException>().And.ParamName.Should().Be("productId");
+        }
+
+        [Fact]
+        public void GetAverageRating_ShouldReturnZero_IfReviewsNotFound()
+        {
+            //arrange
+            var productId = randomizer.Create<string>();
+            var reviews = randomizer.CreateMany<CustomerReviewEntity>().ToList();
+
+            repository.SetupGet(m => m.CustomerReviews).Returns(reviews.AsQueryable());
+
+            //act
+            var result = service.GetAverageRating(productId);
+
+            //assert
+            result.Should().Be(0);
+        }
+
+        [Fact]
+        public void GetAverageRating_ShouldReturnAverageRating_IfReviewsAreFound()
+        {
+            //arrange
+            var productId = randomizer.Create<string>();
+            var reviews = randomizer.CreateMany<CustomerReviewEntity>().ToList();
+            reviews[0].ProductId = productId;
+            reviews[0].Rating = 1;
+            reviews[1].ProductId = productId;
+            reviews[1].Rating = 3;
+
+            repository.SetupGet(m => m.CustomerReviews).Returns(reviews.AsQueryable());
+
+            //act
+            var result = service.GetAverageRating(productId);
+
+            //assert
+            result.Should().Be(2);
+        }
     }
 }

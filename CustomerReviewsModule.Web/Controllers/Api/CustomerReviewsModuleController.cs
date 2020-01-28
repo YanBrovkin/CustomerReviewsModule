@@ -71,7 +71,7 @@ namespace CustomerReviewsModule.Web.Controllers.Api
         /// </summary>
         [HttpGet]
         [Route("products/{productId}/averageRating")]
-        [ResponseType(typeof(GenericSearchResult<int>))]
+        [ResponseType(typeof(int))]
         [CheckPermission(Permission = Core.ModuleConstants.Security.Permissions.Read)]
         public IHttpActionResult GetAverageRating(string productId)
         {
