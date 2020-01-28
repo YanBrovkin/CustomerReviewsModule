@@ -12,6 +12,7 @@
       },
       "review-detail": {
         "labels": {
+          "productId": "Product identifier",
           "title": "Customer review details",
           "content": "Description",
           "authorNickname": "Author",
